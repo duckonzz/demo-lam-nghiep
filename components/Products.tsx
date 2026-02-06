@@ -1,0 +1,83 @@
+import React from 'react';
+import { ArrowRight } from 'lucide-react';
+
+const Products: React.FC = () => {
+  const products = [
+    {
+      title: "Keo lai mô (Hybrid Acacia)",
+      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBCJGaN9bTx4FeG68D_GPWGmQeIIDOsWfHkEOFotNWSaoHZMxESnpeTiMVHHc9DEC1AW2L-U6GqDYzsbH7OKSpBrl34Ui7sV7DbgjlYCLy1thhXmH4E0h6Z0XDlU6b4XNhHWFwedvOJnte9MiVWKpwsmZ26xgElcp4BRG1CbzlF3sfqTXyWg0NpgUitJnnvCH4ECdPeg4vuyA3HbUeS9uQFvCjL6eLjFjVect8gmmG6VH2IdlP6C-iuc1Y_jErtcMfmvvUUOOgxjZ0",
+      details: ["Chiều cao: 25-30cm", "Tuổi cây: 3-4 tháng", "Đặc tính: Sinh trưởng nhanh"],
+      bestSeller: true
+    },
+    {
+      title: "Bạch đàn mô (Eucalyptus)",
+      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuD0qKmGgVHAd_cCFIqOVYTFLDfLxaioOubS-PDa_RRc71ZtwXcIxxrlYE_2VosyEOP3HLHUYE4r64bBuQVlb4HCUicgDJG6yBexT8hPZzHtdBLTQw1mC378RoqxeDBZpPudQhva-XZSOWyZxu0AmWfHGMgMXeFglrZCHwoI5gQY3ISs7oo4x8C_yB0CAouGUbd4Yp4b5rVXykkE--0kPwIBKaSunh0bRURpMM2hIa5MIReSGOnSRB8VKkXMfMQLauzXeZZyOs8wxnE",
+      details: ["Dòng vô tính: U6, PN14", "Khả năng kháng bệnh tốt", "Năng suất gỗ cao"],
+      bestSeller: false
+    },
+    {
+      title: "Cây giống lâm nghiệp khác",
+      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAUhiSEKlhYnOgFZY7LAlUIwEgJfWaszJ4ygHfTS798-cG3PLzgKYjCcqIuHyztVQJgIwK1Llnl1gl6GWyMi2mFll7rTh3QV5lLL7Wv3S7wEkyBfxTolvupLONCrbyMf4-gV2qBwDwkh6FGVGS8mJ09MKdnwgkBQyWNja2ROH3RLteM77P0z0OC0TelzjHllYxLLuqhDEaiXoRZDTRBklAZ6oBU-7_IaVSRE_GrjiND-Q9ERcAWhSqiuuw9Y9UuDZwfcJqzjws8bSo",
+      details: ["Đa dạng chủng loại", "Tư vấn kỹ thuật trồng", "Cung cấp số lượng lớn"],
+      bestSeller: false
+    }
+  ];
+
+  return (
+    <section id="san-pham" className="py-20 lg:py-24 bg-background-light">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Header */}
+        <div className="flex flex-col items-center text-center mb-16">
+          <span className="text-primary text-sm font-bold uppercase tracking-wider mb-2">Sản phẩm chất lượng cao</span>
+          <h2 className="text-slate-900 text-3xl md:text-4xl font-bold leading-tight mb-4">Danh mục sản phẩm cây giống</h2>
+          <p className="text-gray-600 mt-2 max-w-2xl text-base">
+            Chúng tôi cung cấp các giống cây lâm nghiệp được tuyển chọn kỹ lưỡng, sạch bệnh và có tỷ lệ sống cao, phù hợp với khí hậu Việt Nam.
+          </p>
+        </div>
+
+        {/* Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {products.map((product, idx) => (
+            <div key={idx} className="flex flex-col group rounded-2xl overflow-hidden border border-gray-200 bg-white hover:shadow-xl transition-all duration-300">
+              {/* Image */}
+              <div className="w-full h-64 overflow-hidden relative">
+                <div 
+                  className="w-full h-full bg-center bg-cover transition-transform duration-500 group-hover:scale-110" 
+                  style={{ backgroundImage: `url('${product.image}')` }}
+                ></div>
+                {product.bestSeller && (
+                  <div className="absolute top-4 right-4 bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-full shadow-md">
+                    Bán chạy
+                  </div>
+                )}
+              </div>
+
+              {/* Content */}
+              <div className="p-6 flex flex-col flex-1">
+                <div className="mb-4">
+                  <h3 className="text-slate-900 text-xl font-bold mb-3">{product.title}</h3>
+                  <div className="space-y-1">
+                    {product.details.map((detail, dIdx) => (
+                      <p key={dIdx} className="text-gray-500 text-sm">• {detail}</p>
+                    ))}
+                  </div>
+                </div>
+                
+                <div className="mt-auto pt-5 border-t border-gray-100">
+                  <button className="w-full flex items-center justify-center gap-2 h-10 rounded-lg bg-gray-50 text-slate-900 font-bold text-sm hover:bg-primary hover:text-primary-foreground transition-colors group/btn">
+                    <span>Liên hệ tư vấn</span>
+                    <ArrowRight size={16} className="transition-transform group-hover/btn:translate-x-1" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </section>
+  );
+};
+
+export default Products;
