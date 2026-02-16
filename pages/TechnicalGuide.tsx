@@ -15,7 +15,7 @@ import {
   CheckCircle,
   Scissors, // Icon cho phần chăm sóc
 } from 'lucide-react';
-import Footer from './Footer';
+import Footer from '../components/Footer';
 
 // [CẬP NHẬT] Thêm dữ liệu careTimeline cho Bước 4
 const treeData = {

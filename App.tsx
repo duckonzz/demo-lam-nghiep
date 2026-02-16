@@ -1,8 +1,9 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
-import WarrantyPage from './components/WarrantyPage';
-import TechnicalGuide from './components/TechnicalGuide';
+import AboutDetail from './pages/AboutDetail';
+import WarrantyPage from './pages/WarrantyPage';
+import TechnicalGuide from './pages/TechnicalGuide';
 import Header from './components/Header';
 import FloatingButtons from './components/FloatingButtons';
 
@@ -14,6 +15,7 @@ const App: React.FC = () => {
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/gioi-thieu" element={<AboutDetail />} />
             <Route path="/chinh-sach-bao-hanh" element={<WarrantyPage />} />
             <Route path="/ky-thuat" element={<TechnicalGuide />} />
           </Routes>

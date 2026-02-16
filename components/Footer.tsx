@@ -29,13 +29,12 @@ const Footer: React.FC = () => {
   // Cột 3: Hỗ trợ & Tài liệu (Kết hợp Kỹ thuật + Pháp lý + Hậu cần)
   const supportLinks = [
     {
-      name: 'Hồ sơ năng lực (Profile)',
+      name: 'Hồ sơ năng lực',
       href: '/ho-so-nang-luc',
       icon: FileText,
       highlight: true,
     },
     { name: 'Giấy chứng nhận & Pháp lý', href: '/phap-ly', icon: ShieldCheck },
-    { name: 'Bảng giá cây giống 2026', href: '/bang-gia', icon: Download },
     { name: 'Kỹ thuật trồng rừng', href: '/ky-thuat' },
     { name: 'Chính sách bảo hành', href: '/chinh-sach-bao-hanh' },
     { name: 'Hướng dẫn vận chuyển', href: '/van-chuyen', icon: Truck },
@@ -69,13 +68,6 @@ const Footer: React.FC = () => {
               >
                 <Facebook size={20} fill="currentColor" strokeWidth={0} />
               </a>
-              {/* <a
-                href="#"
-                aria-label="Youtube"
-                className="w-10 h-10 rounded-full bg-[#FF0000]/20 hover:bg-[#FF0000] text-white flex items-center justify-center transition-all duration-300"
-              >
-                <Youtube size={20} fill="currentColor" strokeWidth={0} />
-              </a> */}
               {/* Thêm nút Zalo (thường dùng icon chat hoặc phone) */}
               <a
                 href="https://zalo.me/0978509729"

@@ -5,19 +5,19 @@ const Products: React.FC = () => {
   const products = [
     {
       title: "Keo lai mô (Hybrid Acacia)",
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBCJGaN9bTx4FeG68D_GPWGmQeIIDOsWfHkEOFotNWSaoHZMxESnpeTiMVHHc9DEC1AW2L-U6GqDYzsbH7OKSpBrl34Ui7sV7DbgjlYCLy1thhXmH4E0h6Z0XDlU6b4XNhHWFwedvOJnte9MiVWKpwsmZ26xgElcp4BRG1CbzlF3sfqTXyWg0NpgUitJnnvCH4ECdPeg4vuyA3HbUeS9uQFvCjL6eLjFjVect8gmmG6VH2IdlP6C-iuc1Y_jErtcMfmvvUUOOgxjZ0",
+      image: "https://th.bing.com/th/id/R.afb1fd1f3bca0eec35c2b904a20b5db8?rik=XDieyz4BXZpECw&riu=http%3a%2f%2f2.bp.blogspot.com%2f-ri9_k6orCSI%2fVeUObg2Nc8I%2fAAAAAAAAxVU%2fdM_2fTlvy_M%2fs1600%2fIMG_0841.JPG&ehk=YtpI6p9m1P2dEJo2fADVH9t4txmRRSNA52R82657CJM%3d&risl=&pid=ImgRaw&r=0",
       details: ["Chiều cao: 25-30cm", "Tuổi cây: 3-4 tháng", "Đặc tính: Sinh trưởng nhanh"],
       bestSeller: true
     },
     {
       title: "Bạch đàn mô (Eucalyptus)",
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuD0qKmGgVHAd_cCFIqOVYTFLDfLxaioOubS-PDa_RRc71ZtwXcIxxrlYE_2VosyEOP3HLHUYE4r64bBuQVlb4HCUicgDJG6yBexT8hPZzHtdBLTQw1mC378RoqxeDBZpPudQhva-XZSOWyZxu0AmWfHGMgMXeFglrZCHwoI5gQY3ISs7oo4x8C_yB0CAouGUbd4Yp4b5rVXykkE--0kPwIBKaSunh0bRURpMM2hIa5MIReSGOnSRB8VKkXMfMQLauzXeZZyOs8wxnE",
+      image: "https://lamnghiepbinhthuan.com/Uploads/images/VuonUom/t1.jpg",
       details: ["Dòng vô tính: U6, PN14", "Khả năng kháng bệnh tốt", "Năng suất gỗ cao"],
-      bestSeller: false
+      bestSeller: true
     },
     {
       title: "Cây giống lâm nghiệp khác",
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAUhiSEKlhYnOgFZY7LAlUIwEgJfWaszJ4ygHfTS798-cG3PLzgKYjCcqIuHyztVQJgIwK1Llnl1gl6GWyMi2mFll7rTh3QV5lLL7Wv3S7wEkyBfxTolvupLONCrbyMf4-gV2qBwDwkh6FGVGS8mJ09MKdnwgkBQyWNja2ROH3RLteM77P0z0OC0TelzjHllYxLLuqhDEaiXoRZDTRBklAZ6oBU-7_IaVSRE_GrjiND-Q9ERcAWhSqiuuw9Y9UuDZwfcJqzjws8bSo",
+      image: "https://hdvn.vn/uploads/images/giong-cay/cay-cong-trinh/sao-den/cay-sao-den-giong.jpg",
       details: ["Đa dạng chủng loại", "Tư vấn kỹ thuật trồng", "Cung cấp số lượng lớn"],
       bestSeller: false
     }

@@ -16,7 +16,7 @@ import {
   Zap,
   Download,
 } from 'lucide-react';
-import Footer from './Footer';
+import Footer from '../components/Footer';
 
 const WarrantyPage: React.FC = () => {
   const [openSection, setOpenSection] = useState<number | null>(0);
@@ -62,7 +62,7 @@ const WarrantyPage: React.FC = () => {
         <div
           className="absolute inset-0 h-[450px] w-full bg-cover bg-center"
           style={{
-            backgroundImage: `linear-gradient(rgba(16, 34, 23, 0.7), rgba(16, 34, 23, 0.8)), url('https://i.pinimg.com/1200x/96/9d/e0/969de0f730b201e5903de19abd39b422.jpg')`,
+            backgroundImage: `linear-gradient(rgba(16, 34, 23, 0.7), rgba(16, 34, 23, 0.8)), url('https://i.pinimg.com/1200x/72/c6/8f/72c68fcefbd1b4579677d58cf26ecf7c.jpg')`,
           }}
         ></div>
 
@@ -79,9 +79,9 @@ const WarrantyPage: React.FC = () => {
               <span className="text-primary">Cam kết Chất lượng</span>
             </h1>
             <p className="text-lg text-gray-200 leading-relaxed font-light">
-              Chúng tôi hiểu rằng rừng là tài sản trọn đời. Công ty TNHH Vũ Hà cam
-              kết đồng hành cùng bà con với những tiêu chuẩn khắt khe nhất về
-              giống và dịch vụ.
+              Chúng tôi hiểu rằng rừng là tài sản trọn đời. Công ty TNHH Vũ Hà
+              cam kết đồng hành cùng bà con với những tiêu chuẩn khắt khe nhất
+              về giống và dịch vụ.
             </p>
             <div className="mt-4 flex flex-wrap justify-center gap-4">
               <button className="flex h-12 items-center justify-center gap-2 rounded-lg bg-primary px-6 text-text-dark font-bold hover:translate-y-[-2px] transition-transform shadow-lg shadow-primary/20">
@@ -98,7 +98,7 @@ const WarrantyPage: React.FC = () => {
       </div>
 
       {/* Trust Badges - Nổi lên trên */}
-      <div className="relative -mt-10 z-10 px-4 md:px-10 mb-16">
+      <div className="relative -mt-7 z-10 px-4 md:px-10 mb-16">
         <div className="mx-auto max-w-[1024px]">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 shadow-xl rounded-xl bg-white dark:bg-[#1a3324] p-6 border border-[#dbe6df] dark:border-[#2a4a35]">
             {[
@@ -185,8 +185,9 @@ const WarrantyPage: React.FC = () => {
                         // Special render for Return Policy (Section 2) containing a styled box
                         <div>
                           <p className="mb-4 text-text-muted text-base leading-relaxed">
-                            Công ty TNHH Vũ Hà cam kết chia sẻ rủi ro cùng bà con
-                            nông dân. Chính sách bảo hành được áp dụng như sau:
+                            Công ty TNHH Vũ Hà cam kết chia sẻ rủi ro cùng bà
+                            con nông dân. Chính sách bảo hành được áp dụng như
+                            sau:
                           </p>
                           <div className="rounded-lg bg-[#f0f4f2] p-4 border border-[#dbe6df]">
                             <h4 className="font-bold text-text-dark mb-2 text-sm uppercase">
