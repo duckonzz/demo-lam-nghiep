@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Trees, Menu, X } from 'lucide-react';
 import { smoothScrollToElement } from '../utils/scrollUtils';
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,7 +19,8 @@ const Header: React.FC = () => {
 
   const navLinks = [
     { name: 'Trang chủ', href: '/' },
-    { name: 'Giới thiệu', href: '#gioi-thieu' },
+    { name: 'Giới thiệu', href: '/gioi-thieu', isRoute: true },
+    { name: 'Vận chuyển', href: '/van-chuyen', isRoute: true },
     { name: 'Sản phẩm', href: '#san-pham' },
     { name: 'Quy trình', href: '#quy-trinh' },
     { name: 'Liên hệ', href: '#lien-he' },
@@ -60,7 +63,13 @@ const Header: React.FC = () => {
               link.href.startsWith('#') ? (
                 <button
                   key={link.name}
-                  onClick={() => smoothScrollToElement(link.href.slice(1))}
+                  onClick={() => {
+                    if (isHomePage) {
+                      smoothScrollToElement(link.href.slice(1));
+                    } else {
+                      window.location.href = `/${link.href}`;
+                    }
+                  }}
                   className="text-slate-700 hover:text-primary transition-colors text-sm font-bold uppercase tracking-wide"
                 >
                   {link.name}
@@ -99,20 +108,36 @@ const Header: React.FC = () => {
       {mobileMenuOpen && (
         <div className="lg:hidden bg-white border-b border-gray-100 shadow-lg absolute w-full left-0 top-full">
           <div className="px-4 pt-2 pb-6 space-y-1">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {link.name}
-              </a>
-            ))}
+            {navLinks.map((link) => {
+              const handleMobileClick = (e: React.MouseEvent) => {
+                setMobileMenuOpen(false);
+                if (link.href.startsWith('#') && !isHomePage) {
+                  e.preventDefault();
+                  window.location.href = `/${link.href}`;
+                } else if (link.href.startsWith('#') && isHomePage) {
+                  e.preventDefault();
+                  smoothScrollToElement(link.href.slice(1));
+                }
+              };
+              return (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50"
+                  onClick={handleMobileClick}
+                >
+                  {link.name}
+                </a>
+              );
+            })}
             <div className="pt-4">
               <button
                 onClick={() => {
-                  smoothScrollToElement('lien-he');
+                  if (isHomePage) {
+                    smoothScrollToElement('lien-he');
+                  } else {
+                    window.location.href = '/#lien-he';
+                  }
                   setMobileMenuOpen(false);
                 }}
                 className="w-full flex items-center justify-center rounded-lg h-12 bg-primary text-primary-foreground font-bold"

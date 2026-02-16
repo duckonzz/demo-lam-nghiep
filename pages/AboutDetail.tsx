@@ -13,7 +13,6 @@ import {
   Zap,
   TrendingUp,
   Flag,
-  ArrowRight,
 } from 'lucide-react';
 import Footer from '../components/Footer';
 
