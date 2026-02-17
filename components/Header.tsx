@@ -20,11 +20,20 @@ const Header: React.FC = () => {
   const navLinks = [
     { name: 'Trang chủ', href: '/' },
     { name: 'Giới thiệu', href: '/gioi-thieu', isRoute: true },
-    { name: 'Vận chuyển', href: '/van-chuyen', isRoute: true },
+    { name: 'Khách hàng & Dự án', href: '/khach-hang-du-an', isRoute: true },
     { name: 'Sản phẩm', href: '#san-pham' },
     { name: 'Quy trình', href: '#quy-trinh' },
     { name: 'Liên hệ', href: '#lien-he' },
   ];
+
+  // Unified navigation handler for "Liên hệ" links
+  const handleNavigateToContact = () => {
+    if (isHomePage) {
+      smoothScrollToElement('lien-he');
+    } else {
+      window.location.href = '/#lien-he';
+    }
+  };
 
   return (
     <header
@@ -57,17 +66,20 @@ const Header: React.FC = () => {
             </div>
           </Link>
 
-          {/* Desktop Menu */}
           <nav className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) =>
               link.href.startsWith('#') ? (
                 <button
                   key={link.name}
                   onClick={() => {
-                    if (isHomePage) {
-                      smoothScrollToElement(link.href.slice(1));
+                    if (link.href === '#lien-he') {
+                      handleNavigateToContact();
                     } else {
-                      window.location.href = `/${link.href}`;
+                      if (isHomePage) {
+                        smoothScrollToElement(link.href.slice(1));
+                      } else {
+                        window.location.href = `/${link.href}`;
+                      }
                     }
                   }}
                   className="text-slate-700 hover:text-primary transition-colors text-sm font-bold uppercase tracking-wide"
@@ -89,7 +101,7 @@ const Header: React.FC = () => {
           {/* CTA & Mobile Toggle */}
           <div className="flex items-center gap-4">
             <button
-              onClick={() => smoothScrollToElement('lien-he')}
+              onClick={handleNavigateToContact}
               className="hidden sm:flex items-center justify-center rounded-lg h-10 px-5 bg-primary hover:bg-primary-hover text-primary-foreground text-sm font-bold transition-all shadow-sm transform hover:-translate-y-0.5"
             >
               Liên hệ ngay
@@ -111,7 +123,10 @@ const Header: React.FC = () => {
             {navLinks.map((link) => {
               const handleMobileClick = (e: React.MouseEvent) => {
                 setMobileMenuOpen(false);
-                if (link.href.startsWith('#') && !isHomePage) {
+                if (link.href === '#lien-he') {
+                  e.preventDefault();
+                  handleNavigateToContact();
+                } else if (link.href.startsWith('#') && !isHomePage) {
                   e.preventDefault();
                   window.location.href = `/${link.href}`;
                 } else if (link.href.startsWith('#') && isHomePage) {
@@ -133,12 +148,8 @@ const Header: React.FC = () => {
             <div className="pt-4">
               <button
                 onClick={() => {
-                  if (isHomePage) {
-                    smoothScrollToElement('lien-he');
-                  } else {
-                    window.location.href = '/#lien-he';
-                  }
                   setMobileMenuOpen(false);
+                  handleNavigateToContact();
                 }}
                 className="w-full flex items-center justify-center rounded-lg h-12 bg-primary text-primary-foreground font-bold"
               >

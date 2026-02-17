@@ -103,14 +103,17 @@ const Footer: React.FC = () => {
               ))}
             </ul>
             {/* Banner nhỏ quảng cáo Khách hàng dự án */}
-            <div className="mt-6 p-4 bg-white/5 rounded-lg border border-white/10 hover:border-primary/50 transition-colors cursor-pointer group">
+            <Link
+              to="/khach-hang-du-an"
+              className="mt-6 p-4 bg-white/5 rounded-lg border border-white/10 hover:border-primary/50 hover:bg-primary/10 transition-all cursor-pointer group block"
+            >
               <h5 className="text-primary font-bold text-sm mb-1 group-hover:text-white transition-colors">
                 Khách hàng & Dự án
               </h5>
-              <p className="text-xs text-gray-400">
+              <p className="text-xs text-gray-400 group-hover:text-gray-300 transition-colors">
                 Xem hình ảnh thực tế rừng trồng 1-3 năm tuổi.
               </p>
-            </div>
+            </Link>
           </div>
 
           {/* CỘT 3: HỖ TRỢ & PHÁP LÝ (QUAN TRỌNG) */}

@@ -9,13 +9,15 @@ import Header from './components/Header';
 import FloatingButtons from './components/FloatingButtons';
 import ProfilePage from './pages/ProfilePage';
 import LegalPage from './pages/LegalPage';
+import CustomersAndProjects from './pages/CustomersAndProjects';
+import KeoLaiMoPage from './pages/KeoLaiMoPage';
 
 const App: React.FC = () => {
   return (
     <BrowserRouter>
       <div className="flex flex-col min-h-screen w-full overflow-x-hidden">
         <Header />
-        <main className="flex-grow">
+        <main className="flex-grow pt-20">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/gioi-thieu" element={<AboutDetail />} />
@@ -24,6 +26,11 @@ const App: React.FC = () => {
             <Route path="/phap-ly" element={<LegalPage />} />
             <Route path="/chinh-sach-bao-hanh" element={<WarrantyPage />} />
             <Route path="/ky-thuat" element={<TechnicalGuide />} />
+            <Route
+              path="/khach-hang-du-an"
+              element={<CustomersAndProjects />}
+            />
+            <Route path="/san-pham/keo-lai-mo" element={<KeoLaiMoPage />} />
           </Routes>
         </main>
         <FloatingButtons />
