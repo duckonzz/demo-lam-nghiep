@@ -91,14 +91,14 @@ const PROJECTS: Project[] = [
   },
   {
     id: 4,
-    title: 'Keo Lai Mô - Ba Tơ',
+    title: 'Keo Lai Mô',
     location: 'Quảng Ngãi',
     category: '3-year',
     year: 2021,
     height: '14-16m',
     status: 'Vượt chỉ số',
     image:
-      'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2071',
+      'https://tamnongkhanhhoa.vn/tenants/tamnong/Files/News/04df51fa-5169-4881-9900-50b05289a734.jpg',
     badgeColor:
       'text-purple-600 bg-purple-100 dark:bg-purple-900/30 dark:text-purple-400',
     badgeIcon: Zap, // Đổi sang Zap cho cảm giác "vượt trội"
@@ -112,65 +112,36 @@ const PROJECTS: Project[] = [
     height: '20-40cm',
     status: 'Sẵn sàng xuất vườn',
     image:
-      'https://images.unsplash.com/photo-1463320898484-cdee8141c787?q=80&w=2070',
+      'https://th.bing.com/th/id/R.5bcb0c43b5dcb481ab77611a043b4903?rik=gUsVNNLPzO9nMg&riu=http%3a%2f%2fmedia.xanhx.vn%2fstorage%2fnewsportal%2f2021%2f6%2f24%2f10488%2fUom-Cay.jpg&ehk=GW3D6wbdFKB7VUBI7FU2IhSAwQWL7x9D1nycn6akPvs%3d&risl=&pid=ImgRaw&r=0',
     badgeColor:
       'text-orange-600 bg-orange-100 dark:bg-orange-900/30 dark:text-orange-400',
     badgeIcon: Leaf,
   },
   {
     id: 6,
-    title: 'Khai thác Keo Lai 5 năm',
+    title: 'Khai thác Keo Lai',
     location: 'Đắk Lắk',
     category: 'harvest',
     year: 2019,
     height: '18-20m',
     status: 'Đang thu hoạch',
     image:
-      'https://images.unsplash.com/photo-1588336142586-36aff13141fc?q=80&w=1974',
+      'https://khuvuonxanh.com/uploads/2023/05/khai-thac-thu-hoach-go-keo-lai.jpg',
     badgeColor: 'text-red-600 bg-red-100 dark:bg-red-900/30 dark:text-red-400',
     badgeIcon: Gavel, // Icon búa hoặc Check biểu thị việc kết thúc chu kỳ
   },
   {
     id: 7,
-    title: 'Keo Lai Úc - Ia Grai',
-    location: 'Gia Lai',
-    category: '2-year',
-    year: 2022,
-    height: '9-11m',
-    status: 'Ổn định',
-    image:
-      'https://images.unsplash.com/photo-1448375232d63-6a5203f4f141?q=80&w=2070',
-    badgeColor:
-      'text-cyan-600 bg-cyan-100 dark:bg-cyan-900/30 dark:text-cyan-400',
-    badgeIcon: Trees,
-  },
-  {
-    id: 8,
     title: 'Bạch Đàn Mô CT3',
     location: 'Kon Tum',
     category: '1-year',
     year: 2023,
     height: '4-6m',
     status: 'Sinh trưởng nhanh',
-    image:
-      'https://images.unsplash.com/photo-1473448912268-2022ce9509d8?q=80&w=2041',
+    image: 'https://vista.gov.vn/vn-uploads/news/2021_05/4-5-2021/2.jpg',
     badgeColor:
       'text-blue-600 bg-blue-100 dark:bg-blue-900/30 dark:text-blue-400',
     badgeIcon: CheckCircle2,
-  },
-  {
-    id: 9,
-    title: 'Bạch Đàn Kon Tum - GĐ2',
-    location: 'Kon Tum',
-    category: '3-year',
-    year: 2021,
-    height: '15-18m',
-    status: 'Chất lượng gỗ loại A',
-    image:
-      'https://images.unsplash.com/photo-1501183007986-d0d080b147f9?q=80&w=1974',
-    badgeColor:
-      'text-green-600 bg-green-100 dark:bg-green-900/30 dark:text-green-400',
-    badgeIcon: Award, // Thay Star bằng Award cho chất lượng gỗ
   },
 ];
 
